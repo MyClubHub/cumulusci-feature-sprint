@@ -14,6 +14,10 @@ inputs:
     description: 'Name of the scratch org config to use'
     required: true
     default: feature
+  delete-scratch-org:
+    description: 'Specify whether to delete the Scratch org'
+    required: false
+    default: true
 runs:
   using: "composite"
   steps:
@@ -24,3 +28,4 @@ runs:
         cumulusci-version: '${{ inputs.cumulusci-version }}'
         sf-version: '${{ inputs.sf-version }}'
         flow-name: ci_feature_2gp
+        delete-scratch-org: '${{ inputs.delete-scratch-org }}'
